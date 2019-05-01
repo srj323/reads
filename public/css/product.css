@@ -1,0 +1,42 @@
+.product-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.product-item {
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem;
+}
+
+.product__title {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.product__price {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+}
+
+.product__description {
+    text-align: center;
+}
+
+.card {
+  background-color: whitesmoke;
+   border: 2px solid hsl(0, 0%, 40%);
+
+  /* #2 */
+  padding: 5px;
+  /* background: hsl(0, 0%, 20%); */
+
+  /* #3 */
+  outline: 5px solid hsl(70, 0%, 60%);
+
+  /* #4 AND INFINITY!!! (CSS3 only) */
+  box-shadow:  17px 15px hsl(16, 56%, 100%),
+}

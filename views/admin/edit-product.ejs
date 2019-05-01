@@ -1,0 +1,51 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <form class="product-form" action="/admin/<% if (editing) { %>edit-product<% } else {%>add-product<%} %>" method="POST">
+
+          <div class="form-control">
+              <label for="ASIN">ASIN</label>
+              <input type="text" name="ASIN" id="ASIN" value="<% if (editing) { %><%=product.ASIN%><% } %>">
+          </div>
+
+          <div class="form-control">
+              <label for="FileName">FileName</label>
+              <input type="text" name="FileName" id="FileName" value="<% if (editing) { %><%=product.FileName%><% } %>">
+          </div>
+
+          <div class="form-control">
+              <label for="ImageUrl">ImageUrl</label>
+              <input type="text" name="ImageUrl" id="ImageUrl" value="<% if (editing) { %><%=product.ImageUrl%><% } %>">
+          </div>
+
+
+
+            <div class="form-control">
+                <label for="Title">Title</label>
+                <input type="text" name="Title" id="Title" value="<% if (editing) { %><%=product.Title%><% } %>">
+            </div>
+
+            <div class="form-control">
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price" step="0.01" value="<% if (editing) { %><%=product.price%><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" rows="5" ><% if (editing) { %><%=product.description%><% } %></textarea>
+            </div>
+            <% if (editing) { %>
+
+              <input type="hidden" value="<%=product.ASIN %>" name="productASIN" >
+              <%}
+              %>
+
+            <button class="btn" type="submit"><% if (editing) {%>Update Product<%} else {%>Add Product<%} %> </button>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>
